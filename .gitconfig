@@ -1,0 +1,11 @@
+[init]
+	defaultBranch = main
+
+[includeIf "gitdir:~/dev/"]
+  path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/dotfiles/"]
+  path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/daff/"]
+  path = ~/daff/.gitconfig

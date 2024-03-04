@@ -37,3 +37,9 @@ You should see something like:
 ```sh
 lrwxr-xr-x@   15 roze  4 Mar 12:29  .zshrc -> dotfiles/.zshrc
 ```
+
+If you already have the files in your $HOME director, you can overwrite your dotfiles
+
+```sh
+stow --adopt .
+```
