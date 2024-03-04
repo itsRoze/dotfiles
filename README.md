@@ -25,3 +25,15 @@ Then use stow
 ```sh
 stow .
 ```
+
+You can see this is working by running `ls -lah` in your $HOME directory
+
+```sh
+ls -lah
+```
+
+You should see something like:
+
+```sh
+lrwxr-xr-x@   15 roze  4 Mar 12:29  .zshrc -> dotfiles/.zshrc
+```
