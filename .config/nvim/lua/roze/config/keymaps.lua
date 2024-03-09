@@ -62,13 +62,25 @@ bind("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
 bind("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 bind("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
+-- wrap
+bind("n", "<leader>uw", function()
+  local LazyUtil = require("lazy.core.util")
+  vim.opt_local["wrap"] = not vim.opt_local["wrap"]:get()
+  vim.opt_local["linebreak"] = not vim.opt_local["wrap"]:get()
+  if vim.opt_local["wrap"]:get() then
+    LazyUtil.info("Enabled wrap", { title = "Option" })
+  else
+    LazyUtil.warn("Disabled wrap", { title = "Option" })
+  end
+end, { desc = "Toggle wrap and linebreak" })
+
 -- diagnostic
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go({ severity = severity })
+  end
 end
 
 bind("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
