@@ -10,7 +10,7 @@
 [includeIf "gitdir:~/.config/"]
   path = ~/.gitconfig-personal
 
-[includeIf "gitdir:~/.password-store//"]
+[includeIf "gitdir:~/.password-store/"]
   path = ~/.gitconfig-personal
 
 [includeIf "gitdir:~/daff/"]
