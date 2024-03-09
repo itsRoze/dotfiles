@@ -1,5 +1,5 @@
 return {
-  'nvim-lualine/lualine.nvim',
+  "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   init = function()
     vim.g.lualine_laststatus = vim.o.laststatus
@@ -14,10 +14,19 @@ return {
   opts = function()
     return {
       options = {
-        theme = 'catppuccin',
+        theme = "catppuccin",
         globalstatus = true,
-        disabled_filetypes = { statusline = { "dashboard"  } },
-      }
+        disabled_filetypes = { statusline = { "dashboard" } },
+      },
+      sections = {
+        lualine_x = {
+          {
+            require("noice").api.statusline.mode.get,
+            cond = require("noice").api.statusline.mode.has,
+            color = { fg = "#ff9e64" },
+          },
+        },
+      },
     }
-  end
+  end,
 }
