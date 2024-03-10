@@ -24,6 +24,7 @@ return {
       presets = {
         lsp_doc_border = true,
         command_palette = true,
+        long_message_to_split = true,
       },
     },
     dependencies = {
@@ -63,8 +64,29 @@ return {
   },
   {
     "rcarriga/nvim-notify",
+    keys = {
+      {
+        "<leader>un",
+        function()
+          require("notify").dismiss({ silent = true, pending = true })
+        end,
+        desc = "Dismiss all Notifications",
+      },
+      {
+        "<leader>uh",
+        "<cmd>Telescope notify<cr>",
+        desc = "Show Notifications",
+      },
+    },
     opts = {
-      timeout = 8000,
+      timeout = 6000,
+      stages = "slide",
+      max_height = function()
+        return math.floor(vim.o.lines * 0.75)
+      end,
+      max_width = function()
+        return math.floor(vim.o.columns * 0.75)
+      end,
     },
   },
 }

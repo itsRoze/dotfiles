@@ -40,6 +40,7 @@ opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 opt.cursorline = true -- Enable highlighting of the current line
 opt.winbar = "%=%m %f" -- File Name at the top
+opt.pumheight = 10 -- Maximum number of entries in a popup
 
 -- undo
 opt.undofile = true
@@ -50,13 +51,13 @@ opt.wrap = false -- Disable line wrap
 
 -- icons
 opt.fillchars = {
-	foldopen = "",
-	foldclose = "",
-	-- fold = "⸱",
-	fold = " ",
-	foldsep = " ",
-	diff = "╱",
-	eob = " ",
+  foldopen = "",
+  foldclose = "",
+  -- fold = "⸱",
+  fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
 }
 
 -- other
@@ -72,7 +73,7 @@ opt.spelllang = { "en" }
 
 -- smoothscroll
 if vim.fn.has("nvim-0.10") == 1 then
-	opt.smoothscroll = true
+  opt.smoothscroll = true
 end
 
 -- Fix markdown indentation settings
