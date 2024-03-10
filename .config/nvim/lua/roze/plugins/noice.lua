@@ -7,6 +7,11 @@ return {
         override = {
           ["cmp.entry.get_documentation"] = true,
         },
+        hover = {
+          -- Set not show a message if hover is not available
+          -- ex: shift+k on Typescript code
+          silent = true,
+        },
       },
       routes = {
         {
@@ -82,10 +87,10 @@ return {
       timeout = 6000,
       stages = "slide",
       max_height = function()
-        return math.floor(vim.o.lines * 0.75)
+        return math.floor(vim.o.lines * 0.5)
       end,
       max_width = function()
-        return math.floor(vim.o.columns * 0.75)
+        return math.floor(vim.o.columns * 0.5)
       end,
     },
   },

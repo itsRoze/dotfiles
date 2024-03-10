@@ -70,6 +70,7 @@ opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with 
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.mouse = "a" -- Enable mouse mode
 opt.spelllang = { "en" }
+opt.jumpoptions = "view"
 
 -- smoothscroll
 if vim.fn.has("nvim-0.10") == 1 then
