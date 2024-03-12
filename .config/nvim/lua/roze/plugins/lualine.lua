@@ -14,9 +14,10 @@ return {
   opts = function()
     return {
       options = {
-        theme = "catppuccin",
+        -- theme = "catppuccin",
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard" } },
+        icons_enabled = true,
       },
       sections = {
         lualine_x = {
