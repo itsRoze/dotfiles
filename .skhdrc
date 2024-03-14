@@ -1,0 +1,46 @@
+# SKHD Configuration
+# See example https://github.com/koekeishiya/yabai/blob/master/examples/skhdrc
+# skhd --start-service
+
+# toggle window split type
+cmd + alt - e : yabai -m window --toggle split
+
+################################
+# -- Modifying the Layout --
+################################
+
+# flip along y-axis
+cmd + alt - y : yabai -m space --mirror y-axis
+
+# flip along x-axis
+cmd + alt - x : yabai -m space --mirror x-axis
+
+# rotate
+cmd + alt - r : yabai -m space --rotate 270
+
+# toggle window float
+cmd + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+################################
+# -- Modifying Window Size --
+################################
+
+# maximize a window
+cmd + alt - m : yabai -m window --toggle zoom-fullscreen
+
+# balance out tree of windows (resize to occupy same area)
+cmd + alt - 0 : yabai -m space --balance
+
+################################
+# -- Moving Windows Around --
+################################
+
+# swap windows
+cmd + alt - j : yabai -m window --swap south
+cmd + alt - k : yabai -m window --swap north
+cmd + alt - h : yabai -m window --swap west
+cmd + alt - l : yabai -m window --swap east
+
+# move window to display left and right
+cmd + alt - left : yabai -m window --display west; yabai -m display --focus west;
+cmd + alt - right : yabai -m window --display east; yabai -m display --focus east;
