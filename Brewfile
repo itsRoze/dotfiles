@@ -7,6 +7,7 @@ tap "koekeishiya/formulae"                     # yabai
 tap "planetscale/tap"                          # pscale
 tap "stripe/stripe-cli"                        # stripe
 tap "tursodatabase/tap"                        # turso
+tap "FelixKratz/formulae"                      # sketchybar
 
 # Brew
 
@@ -45,9 +46,13 @@ brew "yarn"                                     # Yarn
 brew "zsh-completions"                          # Zsh completions
 brew "jesseduffield/lazygit/lazygit"            # Lazygit
 brew "koekeishiya/formulae/yabai"               # Yabai
+brew "koekeishiya/formulae/skhd"                # skhd
 brew "planetscale/tap/pscale"                   # Planetscale
 brew "stripe/stripe-cli/stripe"                 # Stripe
 brew "tursodatabase/tap/turso"                  # Turso
+brew "sketchybar"                               # Sketchybar
+brew "font-hack-nerd-font"                      # Nerd Font
+brew "jq"                                       # jq for json
 
 # Casks 
 
