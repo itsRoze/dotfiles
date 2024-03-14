@@ -14,7 +14,7 @@ return {
   opts = function()
     return {
       options = {
-        -- theme = "catppuccin",
+        theme = "everforest",
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard" } },
         icons_enabled = true,
