@@ -86,3 +86,7 @@ end
 bind("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 bind("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 bind("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+
+-- turn off horizontal scroll
+bind("n", "<ScrollWheelRight>", "<Nop>")
+bind("n", "<ScrollWheelLeft>", "<Nop>")
