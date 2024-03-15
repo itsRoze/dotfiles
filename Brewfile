@@ -53,13 +53,14 @@ brew "tursodatabase/tap/turso"                  # Turso
 brew "sketchybar"                               # Sketchybar
 brew "font-hack-nerd-font"                      # Nerd Font
 brew "jq"                                       # jq for json
+brew "neofetch"                                 # Neofetch
 
 # Casks 
 
 cask "background-music"
 cask "font-caskaydia-cove-nerd-font"
-cask "iterm2"
 cask "monitorcontrol"
+cask "kitty"
 
 # VS Code
 
