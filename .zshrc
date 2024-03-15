@@ -27,6 +27,8 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting pass)
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR='neovim'
+
 
 # aliases
 alias ls='exa'
