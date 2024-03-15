@@ -1,6 +1,6 @@
 # My Dotfiles
 
-<img width="1680" alt="image" src="https://github.com/itsRoze/dotfiles/main/.github/images/screenshot.png">
+<img width="1680" alt="image" src="https://github.com/itsRoze/dotfiles/blob/main/.github/images/screenshot.png">
 This directory contains the dotfiles for my system.
 
 ## Requirements
