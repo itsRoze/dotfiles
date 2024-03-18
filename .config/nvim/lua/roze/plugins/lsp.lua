@@ -76,6 +76,8 @@ return {
       local capabilities = cmp_nvim_lsp.default_capabilities()
       local lspconfig = require("lspconfig")
 
+      -- vim.cmd("hi VirtualTextHint guifg=#4677b8")
+      vim.api.nvim_set_hl(0, "VirtualTextHint", { link = "VirtualTextWarning" })
       -- Change the Diagnostic symbols in the sign column (gutter)
       local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
       for type, icon in pairs(signs) do
