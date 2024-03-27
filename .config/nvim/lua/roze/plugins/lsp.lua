@@ -28,6 +28,7 @@ return {
           "bashls",
           "cssls",
           "emmet_ls",
+          "gopls",
           "html",
           "lua_ls",
           "pyright",
@@ -97,6 +98,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.emmet_ls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.gopls.setup({
         capabilities = capabilities,
       })
       lspconfig.html.setup({
