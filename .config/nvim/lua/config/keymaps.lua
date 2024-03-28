@@ -1,3 +1,7 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+
 local bind = vim.keymap.set
 
 -- ============= Basic Keymaps =============
@@ -73,19 +77,6 @@ bind("n", "<leader>uw", function()
     LazyUtil.warn("Disabled wrap", { title = "Option" })
   end
 end, { desc = "Toggle wrap and linebreak" })
-
--- diagnostic
-local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
-  return function()
-    go({ severity = severity })
-  end
-end
-
-bind("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-bind("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
-bind("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 
 -- turn off horizontal scroll
 bind("n", "<ScrollWheelRight>", "<Nop>")

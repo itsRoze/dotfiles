@@ -1,9 +1,9 @@
 return {
-  "nvim-treesitter/nvim-treesitter", 
-  build = ":TSUpdate",
-  config = function()
-    local config = require("nvim-treesitter.configs")
-    config.setup({
+
+  -- add more treesitter parsers
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
       ensure_installed = {
         "astro",
         "bash",
@@ -24,9 +24,6 @@ return {
         "vimdoc",
         "yaml",
       },
-      auto_install = true, -- install new parser when opening file
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-  end
+    },
+  },
 }

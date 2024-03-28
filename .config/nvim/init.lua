@@ -1,2 +1,2 @@
-require("roze.config")
-require("roze.lazy")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
