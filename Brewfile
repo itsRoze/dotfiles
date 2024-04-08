@@ -8,6 +8,7 @@ tap "planetscale/tap"                          # pscale
 tap "stripe/stripe-cli"                        # stripe
 tap "tursodatabase/tap"                        # turso
 tap "FelixKratz/formulae"                      # sketchybar
+tap "supabase/tap/"                            # supabase
 
 # Brew
 
@@ -54,6 +55,7 @@ brew "sketchybar"                               # Sketchybar
 brew "font-hack-nerd-font"                      # Nerd Font
 brew "jq"                                       # jq for json
 brew "neofetch"                                 # Neofetch
+brew "supabase/tap/supabase"                    # Supabase
 
 # Casks 
 
