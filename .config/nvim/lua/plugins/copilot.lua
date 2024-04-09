@@ -1,5 +1,6 @@
 return {
   "zbirenbaum/copilot.lua",
+  event = "InsertEnter",
   opts = {
     suggestion = {
       enabled = true,
@@ -7,8 +8,8 @@ return {
       keymap = {
         accept = "<C-l>",
         dismiss = "<C-e>",
-        next = "<c-j>",
-        prev = "<c-k>",
+        next = "<c-[>",
+        prev = "<c-]>",
       },
     },
   },
