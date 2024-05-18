@@ -56,6 +56,7 @@ brew "font-hack-nerd-font"                      # Nerd Font
 brew "jq"                                       # jq for json
 brew "neofetch"                                 # Neofetch
 brew "supabase/tap/supabase"                    # Supabase
+brew "php"                                      # PHP
 
 # Casks 
 
