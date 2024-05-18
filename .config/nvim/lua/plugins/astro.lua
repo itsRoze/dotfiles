@@ -1,5 +1,11 @@
 return {
   {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      table.insert(opts.ensure_installed, "astro-language-server")
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       table.insert(opts.ensure_installed, "astro")
