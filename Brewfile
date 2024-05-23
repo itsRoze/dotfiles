@@ -57,6 +57,7 @@ brew "jq"                                       # jq for json
 brew "neofetch"                                 # Neofetch
 brew "supabase/tap/supabase"                    # Supabase
 brew "php"                                      # PHP
+brew "mysql"                                    #Mysql
 
 # Casks 
 
