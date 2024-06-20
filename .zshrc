@@ -71,3 +71,9 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+# sst
+export PATH=/Users/roze/.sst/bin:$PATH
+
+# composer
+export PATH="$PATH:$HOME/.composer/vendor/bin"
