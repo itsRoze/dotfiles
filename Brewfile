@@ -9,6 +9,7 @@ tap "stripe/stripe-cli"                        # stripe
 tap "tursodatabase/tap"                        # turso
 tap "FelixKratz/formulae"                      # sketchybar
 tap "supabase/tap/"                            # supabase
+tap "sst/tap"                                  # sst
 
 # Brew
 
@@ -57,7 +58,8 @@ brew "jq"                                       # jq for json
 brew "neofetch"                                 # Neofetch
 brew "supabase/tap/supabase"                    # Supabase
 brew "php"                                      # PHP
-brew "mysql"                                    #Mysql
+brew "mysql"                                    # Mysql
+brew "sst"                                      # SST
 
 # Casks 
 
