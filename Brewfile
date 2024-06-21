@@ -10,6 +10,7 @@ tap "tursodatabase/tap"                        # turso
 tap "FelixKratz/formulae"                      # sketchybar
 tap "supabase/tap/"                            # supabase
 tap "sst/tap"                                  # sst
+tap "oven-sh/bun"                              # bun
 
 # Brew
 
@@ -60,6 +61,7 @@ brew "supabase/tap/supabase"                    # Supabase
 brew "php"                                      # PHP
 brew "mysql"                                    # Mysql
 brew "sst"                                      # SST
+brew "bun"                                      # Bun
 
 # Casks 
 
