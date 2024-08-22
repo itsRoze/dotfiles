@@ -50,6 +50,7 @@ yabai -m rule --add app="System Information" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Surfshark$" manage=off
+yabai -m rule --add app="^PhpStorm" title!="(.*\[(.*)\].*)|(.*\(\:.*\).*)" manage=off
 
 # sketchybar
 yabai -m config external_bar all:32:0

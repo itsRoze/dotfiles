@@ -71,3 +71,6 @@ export PATH=/Users/roze/.sst/bin:$PATH
 
 # composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
+
+# bun completions
+[ -s "/Users/roze/.bun/_bun" ] && source "/Users/roze/.bun/_bun"
