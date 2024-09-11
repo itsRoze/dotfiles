@@ -62,6 +62,7 @@ brew "php"                                      # PHP
 brew "mysql"                                    # Mysql
 brew "sst"                                      # SST
 brew "bun"                                      # Bun
+brew "luarocks"                                 # luarocks
 
 # Casks 
 
