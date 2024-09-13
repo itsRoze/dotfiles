@@ -7,22 +7,16 @@ return {
     -- Optional; default configuration will be used if setup isn't called.
     config = function()
       require("everforest").setup({
-        background = "soft",
         transparent_background_level = 1,
         transparent_background = true,
       })
     end,
   },
   {
-    "ellisonleao/gruvbox.nvim",
-    opts = {
-      transparent_mode = true,
-    },
-  },
-  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "everforest",
+      background = "soft",
     },
   },
 }

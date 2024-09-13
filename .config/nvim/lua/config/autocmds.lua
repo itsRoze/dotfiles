@@ -2,34 +2,51 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-local function augroup(name)
-  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
-end
+-- ============= Transparency =============
+-- https://github.com/basecamp/omakub
 
--- Fix conceallevel for json files
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  group = augroup("json_conceal"),
-  pattern = { "json", "jsonc", "json5" },
-  callback = function()
-    vim.opt_local.conceallevel = 0
-  end,
-})
-
--- LuaSnip Snippet History Fix for tab issue (Seems to work really well, I think.)
--- local luasnip_fix_augroup = vim.api.nvim_create_augroup("MyLuaSnipHistory", { clear = true })
--- vim.api.nvim_create_autocmd("ModeChanged", {
---   pattern = "*",
---   callback = function()
---     if
---       -- switched from select mode to normal mode or switched from insert mode
---       -- AND previously inside a snipped
---       -- AND not currently jumping to another snippet
---       ((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
---       and require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
---       and not require("luasnip").session.jump_active
---     then
---       require("luasnip").unlink_current()
---     end
---   end,
---   group = luasnip_fix_augroup,
--- })
+-- -- transparent background
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Pmenu", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Terminal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "FoldColumn", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "Folded", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "TelescopePromptTitle", { bg = "none" })
+--
+-- -- transparent background for neotree
+-- vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NeoTreeVertSplit", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NeoTreeWinSeparator", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NeoTreeEndOfBuffer", { bg = "none" })
+--
+-- -- transparent background for nvim-tree
+-- vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NvimTreeVertSplit", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "none" })
+--
+-- -- transparent notify background
+-- vim.api.nvim_set_hl(0, "NotifyINFOBody", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyERRORBody", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyWARNBody", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyINFOTitle", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyERRORTitle", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyWARNTitle", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyTRACETitle", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyINFOBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyERRORBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyWARNBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { bg = "none" })

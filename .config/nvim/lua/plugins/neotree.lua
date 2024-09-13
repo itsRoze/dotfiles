@@ -2,28 +2,17 @@ return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
     filesystem = {
+      -- use Shift-h to toggle hidden items
       filtered_items = {
-        visible = true,
         hide_dotfiles = false,
-        hide_gitignored = false,
+        hide_gitignored = true,
+        hide_by_name = {
+          ".github",
+          ".gitignore",
+          "package-lock.json",
+        },
+        never_show = { ".git" },
       },
-      never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
-        ".DS_Store",
-      },
-    },
-    indent = {
-      indent_size = 2,
-      padding = 1, -- extra padding on left hand side
-      -- indent guides
-      with_markers = true,
-      indent_marker = "│",
-      last_indent_marker = "└",
-      highlight = "NeoTreeIndentMarker",
-      -- expander config, needed for nesting files
-      with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
-      expander_collapsed = "",
-      expander_expanded = "",
-      expander_highlight = "NeoTreeExpander",
     },
   },
 }
