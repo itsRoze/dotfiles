@@ -5,13 +5,10 @@ return {
       -- use Shift-h to toggle hidden items
       filtered_items = {
         hide_dotfiles = false,
-        hide_gitignored = true,
         hide_by_name = {
-          ".github",
-          ".gitignore",
           "package-lock.json",
+          ".git",
         },
-        never_show = { ".git" },
       },
     },
   },
