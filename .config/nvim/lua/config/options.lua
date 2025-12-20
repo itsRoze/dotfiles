@@ -32,3 +32,6 @@ bind("n", "<S-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window 
 -- turn off horizontal scroll
 bind("n", "<ScrollWheelRight>", "<Nop>")
 bind("n", "<ScrollWheelLeft>", "<Nop>")
+
+-- LSP Server to use for PHP.
+vim.g.lazyvim_php_lsp = "intelephense"
