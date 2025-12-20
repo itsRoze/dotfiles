@@ -9,8 +9,8 @@ return {
       keymap = {
         accept = "<C-l>",
         dismiss = "<C-e>",
-        next = "<C-[>",
-        prev = "<C-]>",
+        next = "<M-[>",
+        prev = "<M-]>",
       },
     },
   },
