@@ -43,7 +43,7 @@ brew "ripgrep"                                  # Ripgrep
 brew "rust"                                     # Rust
 brew "stow"                                     # Stow for pas
 brew "tldr"                                     # Tldr for command line help
-brew "tmux"                                     # Tmux
+brew "herdr"                                    # Herdr — terminal multiplexer for coding agents
 brew "wget"                                     # Wget
 brew "yarn"                                     # Yarn
 brew "zsh-completions"                          # Zsh completions

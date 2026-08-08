@@ -9,7 +9,7 @@ Ensure you have the following installed
 
 - git
 - zsh
-- tmux
+- herdr
 - stow
 
 ## Installation
