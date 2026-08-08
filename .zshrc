@@ -55,12 +55,14 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 
 
 # auto completions
+fpath=($HOME/.local/share/zsh/site-functions $fpath)
+
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
 fi
+
+autoload -Uz compinit
+compinit
 
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -74,3 +76,4 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # bun completions
 [ -s "/Users/roze/.bun/_bun" ] && source "/Users/roze/.bun/_bun"
+export PATH="$HOME/.local/bin:$PATH"
