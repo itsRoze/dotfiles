@@ -1,0 +1,9 @@
+# herdr — https://herdr.dev
+#
+# The prefix is already ctrl+b, the same as tmux, so only the detach key differs:
+# herdr ships it as prefix+q. Remapped to prefix+d for tmux muscle memory.
+#
+# Note prefix+shift+d is close_workspace, so a stray capital here closes a
+# workspace rather than detaching.
+[keys]
+detach = "prefix+d"
