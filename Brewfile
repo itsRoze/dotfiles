@@ -3,7 +3,6 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"                    # lazygit
-tap "koekeishiya/formulae"                     # yabai
 tap "planetscale/tap"                          # pscale
 tap "stripe/stripe-cli"                        # stripe
 tap "tursodatabase/tap"                        # turso
@@ -48,8 +47,6 @@ brew "wget"                                     # Wget
 brew "yarn"                                     # Yarn
 brew "zsh-completions"                          # Zsh completions
 brew "jesseduffield/lazygit/lazygit"            # Lazygit
-brew "koekeishiya/formulae/yabai"               # Yabai
-brew "koekeishiya/formulae/skhd"                # skhd
 brew "planetscale/tap/pscale"                   # Planetscale
 brew "stripe/stripe-cli/stripe"                 # Stripe
 brew "tursodatabase/tap/turso"                  # Turso
