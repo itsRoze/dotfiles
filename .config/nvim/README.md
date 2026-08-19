@@ -1,13 +1,4 @@
-# Personal Neovim Config
+# 💤 LazyVim
 
-## General
-
-Package manager: lazy
-
-## Notes
-
-- Order matters when loading config files
-
-## Todo
-
-- [ ] Display files from .gitignore in Telescope
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.

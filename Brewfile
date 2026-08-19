@@ -28,6 +28,7 @@ brew "git"                                      # Git distributed version contro
 brew "midnight-commander"                       # Terminal File manager 
 brew "mysql-client"                             # MySQL client
 brew "neovim"                                   # Neovim
+brew "tree-sitter-cli"                          # tree-sitter parser generator (nvim-treesitter)
 brew "node"                                     # Node.js
 brew "nvm"                                      # Node Version Manager
 brew "tree"                                     # Tree
