@@ -41,7 +41,7 @@ brew "rename"                                   # Rename
 brew "ripgrep"                                  # Ripgrep
 brew "rust"                                     # Rust
 brew "stow"                                     # Stow for pas
-brew "tldr"                                     # Tldr for command line help
+brew "tlrc"                                     # tldr client for command line help
 brew "herdr"                                    # Herdr — terminal multiplexer for coding agents
 brew "wget"                                     # Wget
 brew "yarn"                                     # Yarn
@@ -53,7 +53,7 @@ brew "tursodatabase/tap/turso"                  # Turso
 brew "sketchybar"                               # Sketchybar
 cask "font-hack-nerd-font"                      # Nerd Font
 brew "jq"                                       # jq for json
-brew "neofetch"                                 # Neofetch
+brew "fastfetch"                                # System info (maintained replacement for neofetch)
 brew "supabase/tap/supabase"                    # Supabase
 brew "php"                                      # PHP
 brew "mysql"                                    # Mysql
