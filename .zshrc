@@ -31,8 +31,8 @@ export EDITOR='nvim'
 
 
 # aliases
-alias ls='exa'
-alias ll='exa -alh'
+alias ls='eza'
+alias ll='eza -alh'
 
 alias cat='bat'
 

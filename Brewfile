@@ -15,12 +15,12 @@ tap "oven-sh/bun"                              # bun
 brew "python@3.11"
 brew "awscli"
 brew "bat"
-brew "glib"                                     # C application utility library, needed for exa?
+brew "glib"                                     # C application utility library
 brew "pycparser"                                # C parser
 brew "cffi"                                     # C Foreign Function Interface
 brew "docutils"                                 # Python documentation utilities
-brew "exa"                                      # Modern replacement for ls
 brew "exercism"                                 # CLI for exercism.io
+brew "eza"                                      # Modern replacement for ls (maintained fork of exa)
 brew "fd"                                       # Simple, fast and user-friendly alternative to find
 brew "flyctl"                                   # Fly.io CLI
 brew "git"                                      # Git distributed version control system
