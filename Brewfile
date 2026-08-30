@@ -1,6 +1,5 @@
 # Taps
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"                    # lazygit
 tap "planetscale/tap"                          # pscale
@@ -52,7 +51,7 @@ brew "planetscale/tap/pscale"                   # Planetscale
 brew "stripe/stripe-cli/stripe"                 # Stripe
 brew "tursodatabase/tap/turso"                  # Turso
 brew "sketchybar"                               # Sketchybar
-brew "font-hack-nerd-font"                      # Nerd Font
+cask "font-hack-nerd-font"                      # Nerd Font
 brew "jq"                                       # jq for json
 brew "neofetch"                                 # Neofetch
 brew "supabase/tap/supabase"                    # Supabase
