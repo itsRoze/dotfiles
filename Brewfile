@@ -33,7 +33,6 @@ brew "nvm"                                      # Node Version Manager
 brew "tree"                                     # Tree
 brew "pass"                                     # Password manager
 brew "pnpm"                                     # Fast, disk space efficient package manager
-brew "postgresql@14"                            # PostgreSQL
 brew "pyenv"                                    # Python version management
 brew "pyenv-virtualenv"                         # Pyenv virtualenv
 brew "redis"                                    # Redis
