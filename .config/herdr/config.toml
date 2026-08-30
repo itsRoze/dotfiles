@@ -1,3 +1,4 @@
+onboarding = false
 # herdr — https://herdr.dev
 #
 # The prefix is already ctrl+b, the same as tmux, so only the detach key differs:
