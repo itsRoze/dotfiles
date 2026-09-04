@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Everforest-inspired focus ring: green into warm gold.
+options=(
+  style=round
+  width=4.0
+  hidpi=on
+  'active_color=gradient(top_left=0xffa7c080,bottom_right=0xffdbbc7f)'
+  inactive_color=0x663b432a
+)
+
+borders "${options[@]}"

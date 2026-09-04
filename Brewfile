@@ -6,6 +6,8 @@ tap "planetscale/tap"                          # pscale
 tap "stripe/stripe-cli"                        # stripe
 tap "tursodatabase/tap"                        # turso
 tap "FelixKratz/formulae"                      # sketchybar
+tap "nikitabobko/tap"                         # AeroSpace
+tap "jomatsu/tap"                             # AeroKit
 tap "supabase/tap/"                            # supabase
 tap "sst/tap"                                  # sst
 tap "oven-sh/bun"                              # bun
@@ -50,13 +52,14 @@ brew "planetscale/tap/pscale"                   # Planetscale
 brew "stripe/stripe-cli/stripe"                 # Stripe
 brew "tursodatabase/tap/turso"                  # Turso
 brew "sketchybar"                               # Sketchybar
+brew "borders"                                  # JankyBorders
 cask "font-hack-nerd-font"                      # Nerd Font
 brew "jq"                                       # jq for json
 brew "fastfetch"                                # System info (maintained replacement for neofetch)
 brew "supabase/tap/supabase"                    # Supabase
 brew "php"                                      # PHP
 brew "mysql"                                    # Mysql
-brew "sst"                                      # SST
+brew "sst/tap/sst"                              # SST
 brew "bun"                                      # Bun
 brew "luarocks"                                 # luarocks
 
@@ -66,6 +69,10 @@ cask "background-music"
 cask "font-caskaydia-cove-nerd-font"
 cask "monitorcontrol"
 cask "kitty"
+cask "nikitabobko/tap/aerospace"
+cask "jomatsu/tap/aerokit"
+cask "ghostty"
+cask "raycast"
 
 # VS Code
 

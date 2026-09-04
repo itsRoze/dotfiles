@@ -52,3 +52,9 @@ source $ITEM_DIR/cpu.sh
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
+
+# Seed AeroSpace workspace state immediately after a bar restart.
+if command -v aerospace >/dev/null 2>&1; then
+  FOCUSED_WORKSPACE="$(aerospace list-workspaces --focused 2>/dev/null)"
+  sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE="$FOCUSED_WORKSPACE"
+fi
