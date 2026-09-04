@@ -213,6 +213,9 @@ function __icon_map() {
    "Keynote" | "Keynote 讲演")
         icon_result=":keynote:"
         ;;
+   "Ghostty")
+        icon_result=":terminal:"
+        ;;
    "kitty")
         icon_result=":kitty:"
         ;;

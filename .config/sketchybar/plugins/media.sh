@@ -1,9 +1,9 @@
 #!/bin/bash
 
-STATE="$(echo "$INFO" | jq -r '.state')"
+STATE="$(printf '%s' "$INFO" | jq -r '.state // empty' 2>/dev/null)"
 if [ "$STATE" = "playing" ]; then
-  MEDIA="$(echo "$INFO" | jq -r '.title + " - " + .artist')"
-  sketchybar --set $NAME label="$MEDIA" drawing=on
+  MEDIA="$(printf '%s' "$INFO" | jq -r '[.title, .artist] | map(select(. != null and . != "")) | join(" — ")' 2>/dev/null)"
+  sketchybar --set "$NAME" label="$MEDIA" drawing=on
 else
-  sketchybar --set $NAME drawing=off
+  sketchybar --set "$NAME" drawing=off
 fi

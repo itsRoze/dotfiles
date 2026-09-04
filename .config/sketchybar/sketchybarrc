@@ -12,7 +12,12 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=37 blur_radius=30 color=$TRANSPARENT
+sketchybar --bar position=top \
+                  height=38 \
+                  blur_radius=30 \
+                  color=$BAR_COLOR \
+                  padding_left=8 \
+                  padding_right=8
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -20,19 +25,19 @@ sketchybar --bar position=top height=37 blur_radius=30 color=$TRANSPARENT
 # https://felixkratz.github.io/SketchyBar/config/items
 
 default=(
-  padding_left=3
-  padding_right=3
+  padding_left=4
+  padding_right=4
   icon.font="SF Pro:Semibold:15.0"
   label.font="Hack Nerd Font:Bold:14.0"
-  icon.color=$WHITE
-  label.color=$WHITE
-  icon.padding_left=3
-  icon.padding_right=3
+  icon.color=$CREAM
+  label.color=$CREAM
+  icon.padding_left=4
+  icon.padding_right=4
   label.padding_left=4
   label.padding_right=4
-  background.corner_radius=5
-  background.height=24
-  background.color=$BG_COLOR
+  background.corner_radius=6
+  background.height=26
+  background.color=$PANEL_COLOR
 )
 sketchybar --default "${default[@]}"
 
@@ -49,6 +54,14 @@ source $ITEM_DIR/volume.sh
 source $ITEM_DIR/battery.sh
 source $ITEM_DIR/cpu.sh
 
+# One quiet instrument cluster instead of four competing pills.
+sketchybar --add bracket system_status cpu battery volume calendar \
+           --set system_status background.drawing=on \
+                               background.color=$PANEL_COLOR \
+                               background.corner_radius=6 \
+                               background.height=26 \
+                               background.border_width=1 \
+                               background.border_color=$BORDER_COLOR
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
