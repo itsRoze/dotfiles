@@ -52,6 +52,16 @@ Then use stow
 stow .
 ```
 
+Install the Homebrew dependencies and select a concrete default NVM version.
+The shell reads this alias directly so Node is available immediately without
+paying NVM's full initialization cost on every terminal launch.
+
+```sh
+brew bundle
+nvm install --lts
+nvm alias default "$(nvm current)"
+```
+
 You can see this is working by running `ls -lah` in your $HOME directory
 
 ```sh

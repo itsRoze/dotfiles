@@ -1,79 +1,85 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Enable Powerlevel10k instant prompt. Keep this near the top.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="nvim"
 
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Keep PATH and completion entries unique as nested shells add to them.
+typeset -U path PATH fpath
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# Register completions before Oh My Zsh runs compinit. Completion functions are
+# autoloaded on demand instead of sourcing large generated files at startup.
+fpath=(
+  "$HOME/.bun"
+  "$HOME/.local/share/zsh/site-functions"
+  /opt/homebrew/share/zsh-completions
+  $fpath
+)
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting pass)
+# Homebrew owns the external plugins and prompt theme; Oh My Zsh supplies its
+# built-in Git and pass integrations.
+ZSH_THEME=""
+plugins=(git pass)
+source "$ZSH/oh-my-zsh.sh"
+[[ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+[[ -r /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme ]] && \
+  source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
-source $ZSH/oh-my-zsh.sh
+# Prompt appearance is intentionally unchanged for now.
+[[ -f "$HOME/.p10k.zsh" ]] && source "$HOME/.p10k.zsh"
 
-export EDITOR='nvim'
-
-
-# aliases
-alias ls='eza'
-alias ll='eza -alh'
-
-alias cat='bat'
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Start NVM upon open
-source $(brew --prefix nvm)/nvm.sh
-
-# pnpm
-export PNPM_HOME="/Users/roze/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm endexport PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-
-# auto completions
-fpath=($HOME/.local/share/zsh/site-functions $fpath)
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# NVM remains authoritative for Node, but its default version is placed on PATH
+# directly. Loading the full NVM implementation is deferred until `nvm` is used.
+export NVM_DIR="$HOME/.nvm"
+if [[ -r "$NVM_DIR/alias/default" ]]; then
+  _nvm_default_version="$(<"$NVM_DIR/alias/default")"
+  if [[ -d "$NVM_DIR/versions/node/$_nvm_default_version/bin" ]]; then
+    path=("$NVM_DIR/versions/node/$_nvm_default_version/bin" $path)
+  fi
+  unset _nvm_default_version
 fi
 
-autoload -Uz compinit
-compinit
+nvm() {
+  if [[ ! -r /opt/homebrew/opt/nvm/nvm.sh ]]; then
+    print -u2 "nvm is not installed; run: brew bundle"
+    return 127
+  fi
+  unfunction nvm
+  source /opt/homebrew/opt/nvm/nvm.sh --no-use
+  nvm "$@"
+}
 
+# Pyenv shims select the project Python; virtualenv keeps directory-based
+# environments activated. Guard initialization for partial fresh installs.
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d "$PYENV_ROOT/bin" ]] && path=("$PYENV_ROOT/bin" $path)
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  if command -v pyenv-virtualenv-init >/dev/null 2>&1; then
+    eval "$(pyenv virtualenv-init -)"
+  fi
+fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# User tools.
+path=(
+  "$HOME/.local/bin"
+  "$HOME/.sst/bin"
+  $path
+  "$HOME/.composer/vendor/bin"
+)
 
+alias ls="eza"
+alias ll="eza -alh"
+alias cat="bat"
 
-# sst
-export PATH=/Users/roze/.sst/bin:$PATH
+# iTerm integration must not emit iTerm-specific control sequences in Ghostty.
+if [[ "$TERM_PROGRAM" == "iTerm.app" && -r "$HOME/.iterm2_shell_integration.zsh" ]]; then
+  source "$HOME/.iterm2_shell_integration.zsh"
+fi
 
-# composer
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-
-# bun completions
-[ -s "/Users/roze/.bun/_bun" ] && source "/Users/roze/.bun/_bun"
-export PATH="$HOME/.local/bin:$PATH"
+# Syntax highlighting must be sourced after all widgets and plugins.
+[[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

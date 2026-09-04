@@ -30,11 +30,9 @@ brew "midnight-commander"                       # Terminal File manager
 brew "mysql-client"                             # MySQL client
 brew "neovim"                                   # Neovim
 brew "tree-sitter-cli"                          # tree-sitter parser generator (nvim-treesitter)
-brew "node"                                     # Node.js
 brew "nvm"                                      # Node Version Manager
 brew "tree"                                     # Tree
 brew "pass"                                     # Password manager
-brew "pnpm"                                     # Fast, disk space efficient package manager
 brew "pyenv"                                    # Python version management
 brew "pyenv-virtualenv"                         # Pyenv virtualenv
 brew "redis"                                    # Redis
@@ -47,6 +45,9 @@ brew "herdr"                                    # Herdr — terminal multiplexer
 brew "wget"                                     # Wget
 brew "yarn"                                     # Yarn
 brew "zsh-completions"                          # Zsh completions
+brew "zsh-autosuggestions"                      # Inline command suggestions
+brew "zsh-syntax-highlighting"                  # Interactive command highlighting
+brew "powerlevel10k"                            # Zsh prompt theme
 brew "jesseduffield/lazygit/lazygit"            # Lazygit
 brew "planetscale/tap/pscale"                   # Planetscale
 brew "stripe/stripe-cli/stripe"                 # Stripe
