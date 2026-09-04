@@ -23,6 +23,7 @@ fpath=(
 ZSH_THEME=""
 plugins=(git pass)
 source "$ZSH/oh-my-zsh.sh"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#7a8478'
 [[ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && \
   source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -r /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme ]] && \
@@ -83,3 +84,14 @@ fi
 # Syntax highlighting must be sourced after all widgets and plugins.
 [[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
   source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Interactive syntax colors share the desktop palette without competing with
+# the prompt's gold command rail.
+ZSH_HIGHLIGHT_STYLES[default]='fg=#d3c6aa'
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#e67e80'
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=#d699b6'
+ZSH_HIGHLIGHT_STYLES[command]='fg=#a7c080'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=#a7c080'
+ZSH_HIGHLIGHT_STYLES[function]='fg=#7fbbb3'
+ZSH_HIGHLIGHT_STYLES[path]='fg=#7fbbb3,underline'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#7a8478'

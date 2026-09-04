@@ -1,13 +1,15 @@
 # Keep Kitty installed as a fallback; Ghostty is the daily driver.
-font-family = MesloLGS NF
+font-family = CaskaydiaCove Nerd Font Mono
 font-size = 14
+font-thicken = true
+font-thicken-strength = 15
 
 # Everforest Dark Soft, shared with the Kitty fallback.
 foreground = #d3c6aa
 background = #333c43
-selection-foreground = #9da9a0
-selection-background = #505a60
-cursor-color = #d3c6aa
+selection-foreground = #d3c6aa
+selection-background = #4f5b58
+cursor-color = #dbbc7f
 cursor-text = #3a464c
 palette = 0=#343f44
 palette = 8=#868d80
@@ -29,8 +31,9 @@ palette = 15=#9da9a0
 background-opacity = 0.82
 background-opacity-cells = true
 background-blur = 24
+minimum-contrast = 1.1
 
-window-padding-x = 10
+window-padding-x = 12
 window-padding-y = 10
 window-padding-balance = true
 macos-titlebar-style = hidden
@@ -39,3 +42,8 @@ macos-window-shadow = false
 
 cursor-style = block
 cursor-style-blink = false
+scrollbar = never
+
+# URLs remain selectable text; hold Command while clicking to open them.
+link-url = true
+link-previews = true
