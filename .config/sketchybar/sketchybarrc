@@ -12,7 +12,10 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
+# Keep fullscreen video above the bar and hide it in native fullscreen Spaces.
 sketchybar --bar position=top \
+                  topmost=off \
+                  show_in_fullscreen=off \
                   height=38 \
                   blur_radius=30 \
                   color=$BAR_COLOR \
